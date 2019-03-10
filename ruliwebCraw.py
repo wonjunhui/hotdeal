@@ -21,13 +21,11 @@ link = link.find("a")
 link = link.get_text()
 
 images = []
-img = soup.find_all("a", class_="img_load")
-print(img)
-# img = img[2]
-# for imged in img.find_all("img"):
-#     images.append("http:"+imged.get("src"))
-#
-# print(basic_url)
-# print(title)
-# print(link)
-# print(images)
+img = soup.find("div", class_="view_content")
+for imged in img.find_all("img"):
+    images.append(imged.get("src"))
+
+print(basic_url)
+print(title)
+print(link)
+print(images)
